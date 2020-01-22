@@ -14,6 +14,11 @@ namespace cd_WinForms_3
 {
     public partial class Form1 : Form
     {
+        /// <summary>
+        /// share this type of component with child form(s)
+        /// </summary>        
+        public object ListBox { get; internal set; }
+
         public Form1()
         {
             InitializeComponent();
@@ -26,6 +31,12 @@ namespace cd_WinForms_3
             rtb.Clear();
             rtb.ScrollBars = RichTextBoxScrollBars.ForcedVertical;
             // to force scrolling to end of added text, use the TextChanged() method
+
+            // clear the listbox
+            lb.Items.Clear();
+            // clear the combobox
+            cb.Items.Clear();
+
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -104,6 +115,14 @@ namespace cd_WinForms_3
             DialogResult res = cmbForm.Show("Do you really want to quit?", "Exit", "Yes", "No", Form1.ActiveForm);
 
             e.Cancel = res == DialogResult.No;
+        }
+
+        private void bAddToListBox_Click(object sender, EventArgs e)
+        {
+            Form2 listTool = new Form2();
+
+            // need to show this modally, remembering to pass this Form
+            listTool.ShowDialog(this);
         }
     }
 }

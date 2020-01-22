@@ -36,6 +36,9 @@
             this.ofd = new System.Windows.Forms.OpenFileDialog();
             this.rtb = new System.Windows.Forms.RichTextBox();
             this.bClearRTB = new System.Windows.Forms.Button();
+            this.lb = new System.Windows.Forms.ListBox();
+            this.bAddToListBox = new System.Windows.Forms.Button();
+            this.cb = new System.Windows.Forms.ComboBox();
             this.ms.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,17 +100,46 @@
             // 
             this.bClearRTB.Location = new System.Drawing.Point(12, 323);
             this.bClearRTB.Name = "bClearRTB";
-            this.bClearRTB.Size = new System.Drawing.Size(75, 23);
+            this.bClearRTB.Size = new System.Drawing.Size(66, 23);
             this.bClearRTB.TabIndex = 2;
             this.bClearRTB.Text = "Clear RTB";
             this.bClearRTB.UseVisualStyleBackColor = true;
             this.bClearRTB.Click += new System.EventHandler(this.bClearRTB_Click);
+            // 
+            // lb
+            // 
+            this.lb.FormattingEnabled = true;
+            this.lb.Location = new System.Drawing.Point(154, 323);
+            this.lb.Name = "lb";
+            this.lb.Size = new System.Drawing.Size(92, 69);
+            this.lb.TabIndex = 3;
+            // 
+            // bAddToListBox
+            // 
+            this.bAddToListBox.Location = new System.Drawing.Point(96, 323);
+            this.bAddToListBox.Name = "bAddToListBox";
+            this.bAddToListBox.Size = new System.Drawing.Size(52, 23);
+            this.bAddToListBox.TabIndex = 4;
+            this.bAddToListBox.Text = "Add...";
+            this.bAddToListBox.UseVisualStyleBackColor = true;
+            this.bAddToListBox.Click += new System.EventHandler(this.bAddToListBox_Click);
+            // 
+            // cb
+            // 
+            this.cb.FormattingEnabled = true;
+            this.cb.Location = new System.Drawing.Point(252, 325);
+            this.cb.Name = "cb";
+            this.cb.Size = new System.Drawing.Size(79, 21);
+            this.cb.TabIndex = 5;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(393, 434);
+            this.Controls.Add(this.cb);
+            this.Controls.Add(this.bAddToListBox);
+            this.Controls.Add(this.lb);
             this.Controls.Add(this.bClearRTB);
             this.Controls.Add(this.rtb);
             this.Controls.Add(this.ms);
@@ -132,6 +164,9 @@
         private System.Windows.Forms.OpenFileDialog ofd;
         private System.Windows.Forms.RichTextBox rtb;
         private System.Windows.Forms.Button bClearRTB;
+        private System.Windows.Forms.Button bAddToListBox;
+        internal System.Windows.Forms.ListBox lb;
+        internal System.Windows.Forms.ComboBox cb;
     }
 }
 
