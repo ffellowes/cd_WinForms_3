@@ -33,10 +33,10 @@ namespace cd_WinForms_3
             if (richTextBox1.Text.Length == 0)
                 Close();
 
+            // one way to do this
             var lines = richTextBox1.Text.Split('\n').ToList();
 
-
-            // with ListBox components set to Internal in Form1.cs
+                        // with ListBox components set to Internal in Form1.cs
             ListBox lbp = ((Form1)this.Owner).lb;
             // same for ComboBox
             ComboBox cbp = ((Form1)this.Owner).cb;
