@@ -54,6 +54,12 @@ namespace cd_WinForms_3
             rtb.Clear();
         }
 
+        #region RichTextBox Events
+        /// <summary>
+        /// RichTextBox keyboard handling
+        /// </summary>
+        /// <param name="sender">sender</param>
+        /// <param name="e">keyboard events</param>
         private void rtb_KeyDown(object sender, KeyEventArgs e)
         {
             // trap Ctrl-A but don't select all text
@@ -65,7 +71,7 @@ namespace cd_WinForms_3
             }
 
             // if Ctrl-Alt-A pressed then select all text
-            if( e.Control && e.Alt && e.KeyCode.ToString() == "A")
+            if (e.Control && e.Alt && e.KeyCode.ToString() == "A")
             {
                 rtb.Text += ">>> Ctrl-Alt-A trapped";
                 rtb.SelectAll();
@@ -73,11 +79,17 @@ namespace cd_WinForms_3
             }
         }
 
+        /// <summary>
+        /// ensure RichTextBox scrolls down automatically
+        /// </summary>
+        /// <param name="sender">sender</param>
+        /// <param name="e">events</param>
         private void rtb_TextChanged(object sender, EventArgs e)
         {
             rtb.SelectionStart = rtb.Text.Length;
             // scroll it automatically
             rtb.ScrollToCaret();
         }
+        #endregion
     }
 }
