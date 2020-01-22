@@ -1,4 +1,5 @@
-﻿using System;
+﻿using cs_classlib_messagebox;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,8 @@ namespace cd_WinForms_3
 
             this.Text = "C# Messing";
             this.MaximizeBox = false;
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            ;
 
             rtb.Clear();
             rtb.ScrollBars = RichTextBoxScrollBars.ForcedVertical;
@@ -91,5 +93,17 @@ namespace cd_WinForms_3
             rtb.ScrollToCaret();
         }
         #endregion
+
+        /// <summary>
+        /// When form tries to close always ask for user confirmation using custom positionable messagebox
+        /// </summary>
+        /// <param name="sender">sender</param>
+        /// <param name="e">close events</param>
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult res = cmbForm.Show("Do you really want to quit?", "Exit", "Yes", "No", Form1.ActiveForm);
+
+            e.Cancel = res == DialogResult.No;
+        }
     }
 }

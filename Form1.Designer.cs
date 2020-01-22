@@ -114,6 +114,7 @@
             this.MainMenuStrip = this.ms;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.ms.ResumeLayout(false);
             this.ms.PerformLayout();
             this.ResumeLayout(false);
